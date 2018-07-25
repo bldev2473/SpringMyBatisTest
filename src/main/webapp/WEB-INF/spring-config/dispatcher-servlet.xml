@@ -4,10 +4,13 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--어노테이션 인식-->
+    <!--기본 패키지 설정-->
+    <context:component-scan base-package="mybatis"/>
+
+    <!--Annotation 인식 설정-->
     <mvc:annotation-driven/>
 
-    <!--정적 자원 매핑-->
+    <!--정적 자원 Mapping-->
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
     <!--View Resolver 설정-->
@@ -15,8 +18,5 @@
         <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-
-    <!--기본 패키지 설정-->
-    <context:component-scan base-package="java"/>
 
 </beans>
